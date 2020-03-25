@@ -5,4 +5,4 @@ exports.builder = yargs => yargs.positional('source', {
 	default: 'config',
 	describe: 'Where to write the usage stats, either a config file or within the package',
 });
-exports.describe = 'Writes to a source of ones choosing of where to store the average usage statistics';
+exports.describe = 'Writes to a source of ones choosing of where to store the median usage statistics';

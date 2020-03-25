@@ -1,7 +1,7 @@
 const { getUsageAboveZero } = require('./utils');
 
 const api = {
-	getAverage (data) {
+	getMedian (data) {
 		const usageStatsAboveZero = getUsageAboveZero(data);
 		const middleIndex = Math.floor(usageStatsAboveZero.length / 2);
 

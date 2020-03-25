@@ -15,14 +15,14 @@ async function cli (options) {
 	});
 
 	options.spinner = ora();
-	options.spinner.start(`Attempting to calculate the average usage`);
-	const average = api.getAverage(file.toJSON(browserstats));
-	const statStr = `> ${average} in my stats`;
-	options.spinner.text = `Calculated average usage`;
+	options.spinner.start(`Attempting to calculate the median usage`);
+	const median = api.getMedian(file.toJSON(browserstats));
+	const statStr = `> ${median} in my stats`;
+	options.spinner.text = `Calculated median usage`;
 
 	switch (options._[0]) {
 		case 'write': {
-			options.spinner.text = `Attempting to write average stats to ${options.source}`;
+			options.spinner.text = `Attempting to write median stats to ${options.source}`;
 
 			switch (options.source) {
 				case 'file': {
@@ -100,10 +100,10 @@ async function cli (options) {
 		}
 
 		case 'get':
-		case 'get-average':
+		case 'get-median':
 		default: {
-			options.spinner.succeed(`Calculated average usage`);
-			process.stdout.write(average.toString());
+			options.spinner.succeed(`Calculated median usage`);
+			process.stdout.write(median.toString());
 			break;
 		}
 	}
