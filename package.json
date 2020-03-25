@@ -1,0 +1,92 @@
+{
+  "name": "@theholocron/browserslist-average-usage",
+  "description": "Calculates the median level of browser usage based on custom stats in order to take advantage of Browserslist custom usage.",
+  "homepage": "https://github.com/the-holocron/browserslist-average-usage#readme",
+  "author": "Newton Koumantzelis",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "directories": {
+    "man": "man"
+  },
+  "files": [
+    "bin",
+    "src",
+    "man"
+  ],
+  "bin": {
+    "browserslist-average-usage": "bin/index.js"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "repository": "https://github.com/the-holocron/browserslist-average-usage.git",
+  "bugs": "https://github.com/the-holocron/browserslist-average-usage/issues",
+  "releases": "https://github.com/the-holocron/browserslist-average-usage/releases",
+  "wiki": "https://github.com/the-holocron/browserslist-average-usage/wiki",
+  "license": "GPL-3.0",
+  "alex": {
+    "allow": [
+      "color",
+      "colors",
+      "dead",
+      "disabled",
+      "invalid"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@theholocron"
+    ]
+  },
+  "browserslist": [
+    "extends @theholocron/browserslist-config"
+  ],
+  "commitlint": {
+    "extends": [
+      "@theholocron"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@theholocron"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged --config @theholocron/lint-staged-config"
+    }
+  },
+  "jest": {
+    "preset": "@theholocron/jest-preset"
+  },
+  "release": {
+    "extends": "@theholocron/semantic-release-config",
+    "branch": "master"
+  },
+  "scripts": {
+    "commit": "commit",
+    "dist": "marked-man README.md > man/browserslist-average-usage.1",
+    "lint": "eslint . --ignore-path .gitignore",
+    "test:docs": "alex .",
+    "test": "jest --coverage --pass-withNoTests",
+    "release": "semantic-release"
+  },
+  "dependencies": {
+    "@theholocron/chopper": "^0.3.0",
+    "ora": "^4.0.3",
+    "update-notifier": "^3.0.1",
+    "yargs": "^14.1.0"
+  },
+  "devDependencies": {
+    "@theholocron/babel-preset": "latest",
+    "@theholocron/browserslist-config": "latest",
+    "@theholocron/commitlint-config": "latest",
+    "@theholocron/eslint-config": "latest",
+    "@theholocron/jest-preset": "latest",
+    "@theholocron/lint-staged-config": "latest",
+    "@theholocron/markdownlint-config": "latest",
+    "@theholocron/semantic-release-config": "latest",
+    "alex": "^7.1.0",
+    "marked": "^0.7.0",
+    "marked-man": "^0.7.0"
+  }
+}

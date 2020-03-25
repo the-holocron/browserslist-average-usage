@@ -1,0 +1,188 @@
+.TH "BROWSERSLIST" "" "March 2020" "" ""
+.SH "NAME"
+\fBBrowserslist\fR
+.P
+npm \fIhttps://img\.shields\.io/npm/v/@theholocron/browserslist\-average\-usage?color=red\fR \fIhttps://www\.npmjs\.com/package/@theholocron/browserslist\-average\-usage\fR Build Status \fIhttps://github\.com/the\-holocron/browserslist\-average\-usage/workflows/CI/badge\.svg\fR \fIhttps://github\.com/the\-holocron/browserslist\-average\-usage/actions?workflow=CI\fR semantic\-release \fIhttps://img\.shields\.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80\-semantic\-\-release\-e10079\.svg\fR \fIhttps://github\.com/semantic\-release/semantic\-release\fR Dependabot Status \fIhttps://api\.dependabot\.com/badges/status?host=github&repo=the\-holocron/browserslist\-average\-usage\fR \fIhttps://dependabot\.com\fR
+.P
+A command\-line client that calculates the median level of browser usage based on custom stats in order to take advantage of Browserslist custom usage \fIhttps://github\.com/browserslist/browserslist#custom\-usage\-data\fR feature\. 
+.P
+When building out custom usage data, often times the statistics you'll receive from Google Analytics will have browsers and/or versions with zeros\. This makes finding a median to use for the \fBin my stats\fP query a bit difficult, since those numbers will deflate your actual audiences\.  This tool will take in a \fBbrowserslist\-stats\.json\fP and return a percentage that is the median number of usage\.
+.SH Installation
+.P
+.RS 2
+.nf
+npm install \-\-save @theholocron/browserslist\-average\-usage
+.fi
+.RE
+.SH Table of Contents
+.RS 0
+.IP \(bu 2
+Usage \fI#usage\fR
+.IP \(bu 2
+Changelog \fI#how\-we\-track\-changes\fR
+.IP \(bu 2
+Versioning \fI#how\-we\-version\fR
+.IP \(bu 2
+Contribution \fI#how\-to\-contribute\fR
+.IP \(bu 2
+Tools \fI#tools\-we\-use\fR
+.IP \(bu 2
+Support \fI#where\-to\-find\-suport\fR
+.IP \(bu 2
+License \fI#license\fR
+
+.RE
+.SH Usage
+.P
+Run the \fB\-\-help\fP or \fB\-h\fP command to find out how to use the command\.
+.P
+.RS 2
+.nf
+$ browserslist\-average\-usage \-\-help
+Usage: browserslist\-average\-usage [options]
+
+Options:
+  \-w, \-\-write      Write to a browserslistrc\.json file    [boolean]
+  \-\-verbose        Turn on the logging                    [boolean]
+  \-h, \-\-help       Show help                              [boolean]
+  \-v, \-\-version    Show version number                    [boolean]
+
+Commands:
+  browserslist\-average\-usage                   Calculates the median level of browser usage based on custom      [aliases: get get\-average] [default]
+                                               stats in order to take advantage of Browserslist custom usage
+  browserslist\-average\-usage write [source]    Writes to a source of ones choosing of where to store the         [aliases: write\-file] 
+                                               average usage statistics
+
+Examples:
+  browserslist\-average\-usage
+
+© 2020 The Holocron\. All rights reserved\.
+.fi
+.RE
+.SS Input
+.P
+At this time, the client does not accept any input\.
+.SS Return
+.P
+If the command succeeds, it will exit with a 0 code and the average percentage of browsers (e\.g\. \fB0\.03030739465585173\fP)\. Otherwise, it will exit with 1 code and an error message\.
+.SS Commands
+.SS \fBget\fP
+.P
+This is the default command and doesn't require that you add \fBget\fP, as its only an alias\. Looks for a \fBbrowserlist\-stats\.json\fP file at the root of the library or code and calculates the average, then outputs to \fBstdout\fP\|\.
+.SS \fBwrite [source]\fP
+.P
+Grabs the average and writes the statistics to a source using the string \fB<percentage> in my stats\fP\|\.  If the stats exist in the source, then it will update the value with the new statistics\.
+.P
+The source can be one of two types: \fBpackage\fP or \fBconfig\fP\|\.  For the package option, it will create or update the \fBbrowserslist\fP key within the \fBpackage\.json\fP\|\.  For the config option, it will create or update a \fBbrowserslistrc\.json\fP file for use within Browserslist shareable configs \fIhttps://github\.com/browserslist/browserslist#shareable\-configs\fR option\.
+.SH How We Track Changes Keep a Changelog \fIhttps://img\.shields\.io/badge/Keep%20a%20Changelog\-1\.0\.0\-orange\fR \fIhttps://keepachangelog\.com/en/1\.0\.0/\fR
+.P
+This project uses a CHANGELOG \fI\|\./CHANGELOG\.md\fR and GitHub releases \fIhttps://help\.github\.com/en/github/administering\-a\-repository/about\-releases\fR which contains a curated, chronologically ordered list of notable changes for each version of a project\. Read more about changelogs \fIhttps://keepachangelog\.com/en/1\.0\.0/\fR\|\.
+.SH How We Version semantic\-release \fIhttps://img\.shields\.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80\-semantic\-\-release\-e10079\.svg\fR \fIhttps://github\.com/semantic\-release/semantic\-release\fR
+.P
+We use SemVer \fIhttps://semver\.org/\fR for its versioning providing us an opt\-in approach to releases\. This means we add a version number according to the spec, as you see below\. So rather than force developers to consume the latest and greatest, they can choose which version to consume and test any newer ones before upgrading\. Please the read the spec as it goes into further detail\.
+.P
+Given a version number \fBMAJOR\.MINOR\.PATCH\fR, increment the:
+.RS 0
+.IP \(bu 2
+\fBMAJOR\fR version when you make incompatible API changes\.
+.IP \(bu 2
+\fBMINOR\fR version when you add functionality in a backward\-compatible manner\.
+.IP \(bu 2
+\fBPATCH\fR version when you make backward\-compatible bug fixes\.
+
+.RE
+.P
+Additional labels for pre\-release and build metadata are available as extensions to the \fBMAJOR\.MINOR\.PATCH\fR format\.
+.SH How to Contribute Conventional Commits \fIhttps://img\.shields\.io/badge/Conventional%20Commits\-1\.0\.0\-yellow\.svg\fR \fIhttps://conventionalcommits\.org\fR
+.P
+Have a bug or a feature request? Looking to contribute to advance the project? Read our contribution guide \fI\|\./github/CONTRIBUTING\.md\fR or maintenance guide \fI\|\./\.github/MAINTAINING\.md\fR first in order to understand how we do things around here\. Or you could look at some of our other guides below:
+<details>
+  <summary><strong>How do I…</strong> (click to expand)</summary>
+
+.RS 0
+.IP \(bu 2
+Ask or Say Something? \fI\|\./\.github/SUPPORT\.md\fR
+.RS
+.IP \(bu 2
+Request Support \fI\|\./\.github/SUPPORT\.md#request\-support\fR
+.IP \(bu 2
+Report an Error or Bug \fI\|\./\.github/SUPPORT\.md#report\-an\-error\-or\-bug\fR
+.IP \(bu 2
+Request a Feature \fI\|\./\.github/SUPPORT\.md#request\-a\-feature\fR
+
+.RE
+.IP \(bu 2
+Make Something? \fI\|\./\.github/CONTRIBUTING\.md\fR
+.RS
+.IP \(bu 2
+Setup the Project \fI\|\./\.github/CONTRIBUTING\.md#get\-started\fR
+.IP \(bu 2
+Create an Issue \fI\|\./\.github/CONTRIBUTING\.md#creating\-a\-good\-issue\fR
+.IP \(bu 2
+Create a Feature Request \fI\|\./\.github/CONTRIBUTING\.md#create\-a\-good\-feature\-request\fR
+.IP \(bu 2
+Contribute Documentation \fI\|\./\.github/CONTRIBUTING\.md#contribute\-to\-documentation\fR
+.IP \(bu 2
+Contribute Code \fI\|\./\.github/CONTRIBUTING\.md#create\-a\-pull\-request\fR
+.IP \(bu 2
+Join the Team \fI\|\./\.github/CONTRIBUTING\.md#join\-the\-team\fR
+
+.RE
+.IP \(bu 2
+Manage Something \fI\|\./\.github/MAINTAINING\.md\fR
+.RS
+.IP \(bu 2
+Provide Support on Issues \fI\|\./\.github/MAINTAINING\.md#provide\-support\-on\-issues\fR
+.IP \(bu 2
+Label Issues \fI\|\./\.github/MAINTAINING\.md#label\-issues\fR
+.IP \(bu 2
+Clean Up Issues and PRs \fI\|\./\.github/MAINTAINING\.md#clean\-up\-issues\-and\-prs\fR
+.IP \(bu 2
+Create a Pull Request \fI\|\./\.github/MAINTAINING\.md#create\-a\-pull\-request\fR
+.IP \(bu 2
+Review Pull Requests \fI\|\./\.github/MAINTAINING\.md#review\-pull\-requests\fR
+.IP \(bu 2
+Merge Pull Requests \fI\|\./\.github/MAINTAINING\.md#merge\-pull\-requests\fR
+.IP \(bu 2
+Tag a Release \fI\|\./\.github/MAINTAINING\.md#tag\-a\-release\fR
+.IP \(bu 2
+Release a Version \fI\|\./\.github/MAINTAINING\.md#release\-a\-version\fR
+
+.RE
+
+.RE
+</details>
+
+.SH Where to Find Support Contributor Covenant \fIhttps://img\.shields\.io/badge/Contributor%20Covenant\-v2\.0%20adopted\-ff69b4\.svg\fR \fIcode_of_conduct\.md\fR
+.P
+Looking to talk to someone or need some help? Please read our support guidelines \fI\|\./\.github/SUPPORT\.md\fR\|\.
+.SH Tools We Use
+.RS 0
+.IP \(bu 2
+Browserslist \fIhttps://github\.com/browserslist/browserslist\fR \- Used to share to our code which browsers we support
+.IP \(bu 2
+Conventional Changelog \fIhttps://github\.com/conventional\-changelog/conventional\-changelog\fR \- Used to generate our CHANGELOG
+.IP \(bu 2
+Husky \fIhttps://github\.com/typicode/husky\fR \- Used for auto\-fixing linting errors on each commit
+.IP \(bu 2
+Semantic Release \fIhttps://semantic\-release\.gitbook\.io/semantic\-release/\fR \- Used for automating and releasing our library
+
+.RE
+.SH References
+.RS 0
+.IP \(bu 2
+Conventional Commits \fIhttps://www\.conventionalcommits\.org/en/v1\.0\.0/\fR \- For how we format commit messages
+.IP \(bu 2
+Contributor Convenant \fIhttps://www\.contributor\-covenant\.org\fR
+.IP \(bu 2
+Keep a Changelog \fIhttps://keepachangelog\.com/en/1\.0\.0/\fR \- For building out a quality CHANGELOG
+.IP \(bu 2
+Make a README \fIhttps://www\.makeareadme\.com/\fR \- For building out this README
+.IP \(bu 2
+SemVer \fIhttps://semver\.org/\fR \- For versioning this library
+
+.RE
+.SH License License: GPL v3 \fIhttps://img\.shields\.io/badge/License\-GPLv3\-blue\.svg\fR \fIhttps://www\.gnu\.org/licenses/gpl\-3\.0\fR
+.P
+©2020 GNU General Public License v3\. See LICENSE \fI\|\./LICENSE\.md\fR for specifics\.
+
