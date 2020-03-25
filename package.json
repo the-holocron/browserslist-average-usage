@@ -3,7 +3,7 @@
   "description": "Calculates the median level of browser usage based on custom stats in order to take advantage of Browserslist custom usage.",
   "homepage": "https://github.com/the-holocron/browserslist-median-usage#readme",
   "author": "Newton Koumantzelis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.js",
   "directories": {
     "man": "man"
