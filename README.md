@@ -1,6 +1,4 @@
-# Browserslist Median Usage
-
-[![npm](https://img.shields.io/npm/v/@theholocron/browserslist-median-usage?color=red)](https://www.npmjs.com/package/@theholocron/browserslist-median-usage) [![Build Status](https://github.com/the-holocron/browserslist-median-usage/workflows/CI/badge.svg)](https://github.com/the-holocron/browserslist-median-usage/actions?workflow=CI) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=the-holocron/browserslist-median-usage)](https://dependabot.com)
+# Browserslist Median Usage [![npm](https://img.shields.io/npm/v/@theholocron/browserslist-median-usage?color=red)](https://www.npmjs.com/package/@theholocron/browserslist-median-usage) [![Build Status](https://github.com/the-holocron/browserslist-median-usage/workflows/CI/badge.svg)](https://github.com/the-holocron/browserslist-median-usage/actions?workflow=CI) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=the-holocron/browserslist-median-usage)](https://dependabot.com)
 
 A command-line client that calculates the median level of browser usage based on custom stats in order to take advantage of [Browserslist custom usage](https://github.com/browserslist/browserslist#custom-usage-data) feature. 
 
@@ -15,12 +13,12 @@ npm install --save @theholocron/browserslist-median-usage
 ## Table of Contents
 
 * [Usage](#usage)
-* [Changelog](#how-we-track-changes)
-* [Versioning](#how-we-version)
-* [Contribution](#how-to-contribute)
+* [Changelog](#how-we-track-changes-)
+* [Versioning](#how-we-version-)
+* [Contribution](#how-to-contribute-)
+* [Support](#where-to-find-suport-)
 * [Tools](#tools-we-use)
-* [Support](#where-to-find-suport)
-* [License](#license)
+* [License](#license-)
 
 ## Usage
 
