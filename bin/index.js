@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const pkg = require('../package.json');
-const cli = require('../src/cli');
-const { aliases, copyright, usage } = require('../src/options');
+/* eslint-disable import/order */
 const updateNotifier = require('update-notifier');
+const { aliases, copyright, usage } = require('../src/options');
 const options = require('yargs')
 	.usage(usage)
 	.commandDir('../src/cmds')
@@ -14,6 +13,8 @@ const options = require('yargs')
 	.version()
 	.epilogue(copyright)
 	.argv;
+const pkg = require('../package.json');
+const cli = require('../src/cli');
 
 updateNotifier({ pkg }).notify();
 

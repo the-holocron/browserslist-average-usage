@@ -1,7 +1,7 @@
 const { file, log, str } = require('@theholocron/chopper');
 const ora = require('ora');
-const api = require('./');
 const { isExtends } = require('./utils');
+const api = require('./');
 
 async function cli (options) {
 	const browserstats = `browserslist-stats.json`;
@@ -28,7 +28,7 @@ async function cli (options) {
 					// file to use locally
 					// @TODO: needs to read current file to amend using readline
 					const rcfile = './.browserslistrc';
-					log.error('Feature not ready');
+					log.error(`${rcfile} support is not ready`);
 					break;
 				}
 
@@ -65,7 +65,7 @@ async function cli (options) {
 
 					if (!str.toFileSync(data, pkgfile)) {
 						options.spinner.stop();
-						log.error(`There was an error writing ${path} to the file system!`);
+						log.error(`There was an error writing ${pkgfile} to the file system!`);
 						process.exit(1);
 					}
 					str.toJSONFile(data, pkgfile);

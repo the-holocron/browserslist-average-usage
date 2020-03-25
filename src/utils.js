@@ -3,13 +3,13 @@ const combineVendorWithVersion = ([ vendor, versions ]) => Object
 	.keys(versions)
 	.reduce((acc, version) => ({
 		...acc,
-		[`${vendor}${version}`]: versions[version]
+		[`${vendor}${version}`]: versions[version],
 	}), {});
 
 // a reducer to flatten out the vendros with version
 const flattenVendorVersions = (acc, vendorVersion) => [
 	...acc,
-	...Object.entries(vendorVersion)
+	...Object.entries(vendorVersion),
 ];
 
 // filter for removing all browsers/versions with zero for a value
