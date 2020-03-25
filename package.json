@@ -1,9 +1,9 @@
 {
-  "name": "@theholocron/browserslist-average-usage",
+  "name": "@theholocron/browserslist-median-usage",
   "description": "Calculates the median level of browser usage based on custom stats in order to take advantage of Browserslist custom usage.",
-  "homepage": "https://github.com/the-holocron/browserslist-average-usage#readme",
+  "homepage": "https://github.com/the-holocron/browserslist-median-usage#readme",
   "author": "Newton Koumantzelis",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "src/index.js",
   "directories": {
     "man": "man"
@@ -14,15 +14,15 @@
     "man"
   ],
   "bin": {
-    "browserslist-average-usage": "bin/index.js"
+    "browserslist-median-usage": "bin/index.js"
   },
   "engines": {
     "node": ">=12"
   },
-  "repository": "https://github.com/the-holocron/browserslist-average-usage.git",
-  "bugs": "https://github.com/the-holocron/browserslist-average-usage/issues",
-  "releases": "https://github.com/the-holocron/browserslist-average-usage/releases",
-  "wiki": "https://github.com/the-holocron/browserslist-average-usage/wiki",
+  "repository": "https://github.com/the-holocron/browserslist-median-usage.git",
+  "bugs": "https://github.com/the-holocron/browserslist-median-usage/issues",
+  "releases": "https://github.com/the-holocron/browserslist-median-usage/releases",
+  "wiki": "https://github.com/the-holocron/browserslist-median-usage/wiki",
   "license": "GPL-3.0",
   "alex": {
     "allow": [
@@ -67,7 +67,7 @@
   },
   "scripts": {
     "commit": "commit",
-    "dist": "marked-man README.md > man/browserslist-average-usage.1",
+    "dist": "marked-man README.md > man/browserslist-median-usage.1",
     "lint": "eslint . --ignore-path .gitignore",
     "test:docs": "alex .",
     "test": "jest --coverage --pass-withNoTests",
@@ -76,7 +76,7 @@
   "dependencies": {
     "@theholocron/chopper": "^0.3.0",
     "ora": "^4.0.3",
-    "update-notifier": "^3.0.1",
+    "update-notifier": "^4.1.0",
     "yargs": "^15.3.1"
   },
   "devDependencies": {

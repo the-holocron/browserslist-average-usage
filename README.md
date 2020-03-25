@@ -1,6 +1,6 @@
-# Browserslist Average Usage
+# Browserslist Median Usage
 
-[![npm](https://img.shields.io/npm/v/@theholocron/browserslist-average-usage?color=red)](https://www.npmjs.com/package/@theholocron/browserslist-average-usage) [![Build Status](https://github.com/the-holocron/browserslist-average-usage/workflows/CI/badge.svg)](https://github.com/the-holocron/browserslist-average-usage/actions?workflow=CI) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=the-holocron/browserslist-average-usage)](https://dependabot.com)
+[![npm](https://img.shields.io/npm/v/@theholocron/browserslist-median-usage?color=red)](https://www.npmjs.com/package/@theholocron/browserslist-median-usage) [![Build Status](https://github.com/the-holocron/browserslist-median-usage/workflows/CI/badge.svg)](https://github.com/the-holocron/browserslist-median-usage/actions?workflow=CI) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=the-holocron/browserslist-median-usage)](https://dependabot.com)
 
 A command-line client that calculates the median level of browser usage based on custom stats in order to take advantage of [Browserslist custom usage](https://github.com/browserslist/browserslist#custom-usage-data) feature. 
 
@@ -9,7 +9,7 @@ When building out custom usage data, often times the statistics you'll receive f
 ## Installation
 
 ```bash
-npm install --save @theholocron/browserslist-average-usage
+npm install --save @theholocron/browserslist-median-usage
 ```
 
 ## Table of Contents
@@ -27,23 +27,22 @@ npm install --save @theholocron/browserslist-average-usage
 Run the `--help` or `-h` command to find out how to use the command.
 
 ```
-$ browserslist-average-usage --help
-Usage: browserslist-average-usage [options]
+$ browserslist-median-usage --help
+Usage: browserslist-median-usage [options]
 
 Options:
-  -w, --write      Write to a browserslistrc.json file    [boolean]
   --verbose        Turn on the logging                    [boolean]
   -h, --help       Show help                              [boolean]
   -v, --version    Show version number                    [boolean]
 
 Commands:
-  browserslist-average-usage                   Calculates the median level of browser usage based on custom      [aliases: get get-average] [default]
+  browserslist-median-usage                   Calculates the median level of browser usage based on custom      [aliases: get get-median] [default]
                                                stats in order to take advantage of Browserslist custom usage
-  browserslist-average-usage write [source]    Writes to a source of ones choosing of where to store the         [aliases: write-file] 
-                                               average usage statistics
+  browserslist-median-usage write [source]    Writes to a source of ones choosing of where to store the         [aliases: write-file] 
+                                               median usage statistics
 
 Examples:
-  browserslist-average-usage
+  browserslist-median-usage
 
 © 2020 The Holocron. All rights reserved.
 ```
@@ -54,17 +53,17 @@ At this time, the client does not accept any input.
 
 ### Return
 
-If the command succeeds, it will exit with a 0 code and the average percentage of browsers (e.g. `0.03030739465585173`). Otherwise, it will exit with 1 code and an error message.
+If the command succeeds, it will exit with a 0 code and the median percentage of browsers (e.g. `0.03030739465585173`). Otherwise, it will exit with 1 code and an error message.
 
 ### Commands
 
 #### `get`
 
-This is the default command and doesn't require that you add `get`, as its only an alias. Looks for a `browserlist-stats.json` file at the root of the library or code and calculates the average, then outputs to `stdout`.
+This is the default command and doesn't require that you add `get`, as its only an alias. Looks for a `browserlist-stats.json` file at the root of the library or code and calculates the median, then outputs to `stdout`.
 
 #### `write [source]`
 
-Grabs the average and writes the statistics to a source using the string `<percentage> in my stats`.  If the stats exist in the source, then it will update the value with the new statistics.
+Grabs the median and writes the statistics to a source using the string `<percentage> in my stats`.  If the stats exist in the source, then it will update the value with the new statistics.
 
 The source can be one of two types: `package` or `config`.  For the package option, it will create or update the `browserslist` key within the `package.json`.  For the config option, it will create or update a `browserslistrc.json` file for use within [Browserslist shareable configs](https://github.com/browserslist/browserslist#shareable-configs) option.
 

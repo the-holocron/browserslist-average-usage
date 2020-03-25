@@ -1,7 +1,8 @@
+/* eslint-disable import/order */
 const { file, log, str } = require('@theholocron/chopper');
 const ora = require('ora');
-const api = require('./');
 const { isExtends } = require('./utils');
+const api = require('./');
 
 async function cli (options) {
 	const browserstats = `browserslist-stats.json`;
@@ -14,21 +15,21 @@ async function cli (options) {
 	});
 
 	options.spinner = ora();
-	options.spinner.start(`Attempting to calculate the average usage`);
-	const average = api.getAverage(file.toJSON(browserstats));
-	const statStr = `> ${average} in my stats`;
-	options.spinner.text = `Calculated average usage`;
+	options.spinner.start(`Attempting to calculate the median usage`);
+	const median = api.getMedian(file.toJSON(browserstats));
+	const statStr = `> ${median} in my stats`;
+	options.spinner.text = `Calculated median usage`;
 
 	switch (options._[0]) {
 		case 'write': {
-			options.spinner.text = `Attempting to write average stats to ${options.source}`;
+			options.spinner.text = `Attempting to write median stats to ${options.source}`;
 
 			switch (options.source) {
 				case 'file': {
 					// file to use locally
 					// @TODO: needs to read current file to amend using readline
 					const rcfile = './.browserslistrc';
-					log.error('Feature not ready');
+					log.error(`${rcfile} support is not ready`);
 					break;
 				}
 
@@ -65,7 +66,7 @@ async function cli (options) {
 
 					if (!str.toFileSync(data, pkgfile)) {
 						options.spinner.stop();
-						log.error(`There was an error writing ${path} to the file system!`);
+						log.error(`There was an error writing ${pkgfile} to the file system!`);
 						process.exit(1);
 					}
 					str.toJSONFile(data, pkgfile);
@@ -99,10 +100,10 @@ async function cli (options) {
 		}
 
 		case 'get':
-		case 'get-average':
+		case 'get-median':
 		default: {
-			options.spinner.succeed(`Calculated average usage`);
-			process.stdout.write(average.toString());
+			options.spinner.succeed(`Calculated median usage`);
+			process.stdout.write(median.toString());
 			break;
 		}
 	}
