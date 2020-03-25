@@ -31,7 +31,6 @@ $ browserslist-average-usage --help
 Usage: browserslist-average-usage [options]
 
 Options:
-  -w, --write      Write to a browserslistrc.json file    [boolean]
   --verbose        Turn on the logging                    [boolean]
   -h, --help       Show help                              [boolean]
   -v, --version    Show version number                    [boolean]
