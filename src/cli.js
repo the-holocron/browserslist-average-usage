@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 const { file, log, str } = require('@theholocron/chopper');
 const ora = require('ora');
 const { isExtends } = require('./utils');
