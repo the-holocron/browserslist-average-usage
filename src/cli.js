@@ -17,7 +17,7 @@ async function cli (options) {
 	options.spinner = ora();
 	options.spinner.start(`Attempting to calculate the median usage`);
 	const median = api.getMedian(file.toJSON(browserstats));
-	const statStr = `> ${median} in my stats`;
+	const statStr = `> ${median}% in my stats`;
 	options.spinner.text = `Calculated median usage`;
 
 	switch (options._[0]) {
