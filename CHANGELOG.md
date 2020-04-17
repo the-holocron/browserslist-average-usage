@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/the-holocron/browserslist-median-usage/compare/1.0.1...1.0.2) (2020-04-17)
+
+
+### Bug Fixes
+
+* add percentage into stat ([4508791](https://github.com/the-holocron/browserslist-median-usage/commit/4508791f9f821e4613f0bcceb5c0c0b6a330da5b))
+
 ## [1.0.1](https://github.com/the-holocron/browserslist-median-usage/compare/1.0.0...1.0.1) (2020-03-25)
 
 
