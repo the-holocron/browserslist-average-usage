@@ -229,11 +229,10 @@ These tasks are run most often, and most are required to pass checks before any 
 
 | Command         | Description | Notes |
 |-----------------|-------------| ----- |
-| `npm run dist`  | Runs `babel` and `node-sass` compliers to convert (S)CSS and JS(X) to browser-friendly code | No reason to run this unless you're debugging output of code. This is run as part of the publishing process, so ensuring it passes can help. |
-| `npm run lint`  | Runs the linting suite; includes markdown, (s)css, and javascript | Husky will attempt to run this on every commit and auto-fix.  While it's not required for this to pass and you may bypass with the flag of `--no-verify`, its good to run to help debugging and ensure a faster PR process. |
-| `npm test`  | Runs the testing suite; includes sensitive language, (s)css, and javascript | If the test coverage drops below the configured numbers, this will fail despite all tests pass.  In that event, you should see a message with the percentages to which it dropped.
-| `npm run typecheck` | Runs `flow` type checking on all related code |
-| `npm start` | Runs `storybook` on port `3500` to test component development | Make sure all variations are covered and all props have knobs
+| `npm run dist`  | Runs `babel` and/or `sass` compliers to convert (S)CSS and JS(X) to browser-friendly code | No reason to run this unless you're debugging output of code. This is run as part of the publishing process, so ensuring it passes can help. |
+| `npm run lint`  | Runs the linting suite; includes markdown, (S)CSS, and JavaScript | Husky will attempt to run this on every commit and auto-fix.  While it's not required for this to pass and you may bypass with the flag of `--no-verify`, its good to run to help debugging and ensure a faster PR process. |
+| `npm test`  | Runs the testing suite; includes sensitive language, (S)CSS, and JavaScript | If the test coverage drops below the configured numbers, this will fail despite all tests pass.  In that event, you should see a message with the percentages to which it dropped.
+| `npm start` | Runs `storybook` to test component development | Make sure all variations are covered and all props have knobs
 
 #### Ancillary Tasks
 
@@ -242,13 +241,13 @@ Not the main tasks that get run everyday, but in the event you need finer contro
 | Command         | Description | Notes |
 |-----------------|-------------| ----- |
 | `npm run commit` | Runs the interactive `commitlint` for help contributing an [acceptable commit message](#commit-conventions) | <https://commitlint.js.org>
-| `npm run dist:css` | Runs `node-sass` and `postcss` to compile the (S)CSS into CSS | <https://sass-lang.com>, <https://postcss.org>
-| `npm run dist:js` | Runs `babel` to compile the JS(X) into JS; check out the [config](https://github.com/iamnewton/babel-preset) | <https://babeljs.io>
-| `npm run lint:css` | Runs `stylelint` to test the (S)CSS for style violations; check out the [rules](https://github.com/iamnewton/stylelint-config/blob/master/stylelintrc.json#L20-L669) | <https://stylelint.io>
-| `npm run lint:js` | Runs `eslint` to test the JS(X) for style violations; check out the [rules](https://github.com/platform/eslint-config/blob/master/eslintrc.json#L49-L415) | <https://eslint.org>
+| `npm run dist:css` | Runs `sass` and `postcss` to compile the (S)CSS into CSS | <https://sass-lang.com>, <https://postcss.org>
+| `npm run dist:js` | Runs `babel` to compile the JS(X) into JS; check out the [config](https://github.com/the-holocron/astromech/tree/master/packages/babel-preset) | <https://babeljs.io>
+| `npm run lint:css` | Runs `stylelint` to test the (S)CSS for style violations; check out the [rules](https://github.com/the-holocron/astromech/tree/master/packages/stylelint-config/blob/master/stylelintrc.json#L20-L669) | <https://stylelint.io>
+| `npm run lint:js` | Runs `eslint` to test the JS(X) for style violations; check out the [rules](https://github.com/the-holocron/astromech/tree/master/packages/eslint-config/blob/master/eslintrc.json#L49-L415) | <https://eslint.org>
 | `npm run test:docs`  | Runs `alex` to test for sensitive language | <https://alexjs.com>
-| `npm run test:js`  | Runs `jest` for testing on (S)CSS mixins, and JavaScript; check out the [config](https://github.com/iamnewton/jest-preset) | <https://jestjs.io>
-| `npm run docs` | Runs `storybook` to build out the `docs/`; check out the [config](/.storybook/config.js) | <https://storybook.js.org>
+| `npm run test:js`  | Runs `jest` for testing on (S)CSS mixins, and JavaScript; check out the [config](https://github.com/the-holocron/astromech/tree/master/packages/jest-preset) | <https://jestjs.io>
+| `npm run docs` | Runs `storybook` to build out the `docs/`; check out the [config](https://github.com/the-holocron/astromech/tree/master/packages/storybook-config/config.js) | <https://storybook.js.org>
 
 ### Commit Conventions
 
