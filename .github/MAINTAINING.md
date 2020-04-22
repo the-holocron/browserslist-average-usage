@@ -134,7 +134,7 @@ Some notes about reviewing:
 
 ### Browsers & Devices on Which We Test
 
-Legion supports the [latest, stable releases](https://browserl.ist/?q=%3E+5%25+in+US%2C+not+ie+11%2C+not+op_mini+all) of all major browsers and platforms based on the most [common usage from stats](./browserslist-stats.json) accumulated in Google Analytics. We use [caniuse.com](https://caniuse.com/) programmatically to determine support and [browserl.ist](http://browserl.ist/) to determine usage based on strings we provide. This technically translates to the [> ~0.03% in my stats](http://browserl.ist/?q=%3E+5%25++in+US), excluding IE11 and Opera Mini using **not ie 11, not op_mini all**.
+We support the [latest, stable releases](https://browserl.ist/?q=%3E+5%25+in+US%2C+not+ie+11%2C+not+op_mini+all) of all major browsers and platforms based on the most [common usage from stats](./browserslist-stats.json) accumulated in Google Analytics. We use [caniuse.com](https://caniuse.com/) programmatically to determine support and [browserl.ist](http://browserl.ist/) to determine usage based on strings we provide. This technically translates to the [> ~0.03% in my stats](http://browserl.ist/?q=%3E+5%25++in+US), excluding IE11 and Opera Mini using **not ie 11, not op_mini all**.
 
 Check out the [README](../README.md#which-browsers-devices-we-support) for the specifics of browsers we support. That being said, we do test on a larger set of browsers to ensure backwards-compatibility as well as more cutting edge browsers to see what future features we maybe able to utilize. Below is a general list of browsers we should be testing on:
 
