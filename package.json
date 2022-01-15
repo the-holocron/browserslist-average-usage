@@ -89,7 +89,7 @@
     "@theholocron/markdownlint-config": "latest",
     "@theholocron/semantic-release-config": "latest",
     "alex": "^8.1.1",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "marked-man": "^0.7.0"
   }
 }
